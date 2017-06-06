@@ -10,16 +10,31 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- Load Facebook SDK for JavaScript -->
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <img src='./assets/styles/img/mars-animated.gif';
+      <h1>listFul</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <p>Make a list with this app.</p>
+
+      <!-- this is the facebook generated code, just for fun no analytics connected at this time -->
+      <div class="fb-like logged-in-display hiding"
+        data-href="https://lisamsmith100.github.io/listFul/"
+        data-layout="button_count"
+        data-action="like"
+        data-size="small"
+        data-show-faces="true"
+        data-share="true">
+      </div>
+
     </body>
 </html>
