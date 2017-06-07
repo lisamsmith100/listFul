@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   // console.log('signin data is ', data)
   api.signIn(data)
-  .then(listApi.onShowEntries)
+  .then(listApi.onShowLists)
   .done(ui.signInSuccess)
   .fail(ui.signInFailure)
 }

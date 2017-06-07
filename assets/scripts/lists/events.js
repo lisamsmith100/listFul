@@ -46,7 +46,7 @@ const addListHandlers = function (event) {
   $('#showAllLists').on('click', onShowLists)
   $('#addNewLists').on('submit', onAddList)
   $('#updateOneLists').on('submit', onUpdateList)
-  $('#deleteOneLists').on('submit', onDeleteList)
+  $('#deleteOneList').on('submit', onDeleteList)
   $('#addNewLists').trigger('reset')
   $('#updateOneLists').trigger('reset')
   $('#deleteOneLists').trigger('reset')
