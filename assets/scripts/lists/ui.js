@@ -1,8 +1,8 @@
 'use strict'
 
-const showListsTemplate = require('../templates/list.handlebars')
-const addListTemplate = require('../templates/list.handlebars')
-const updateListTemplate = require('../templates/list.handlebars')
+const showListsTemplate = require('../templates/lists.handlebars')
+const addListTemplate = require('../templates/lists.handlebars')
+const updateListTemplate = require('../templates/lists.handlebars')
 // const deleteListTemplate = require('../templates/list.handlebars')
 const store = require('../store.js')
 const events = require('./events.js')
@@ -14,7 +14,7 @@ const showListsSuccess = (data) => {
     return a.id - b.id
   })
   const showListsHtml = showListsTemplate({ lists: data.lists })
-  $('.content').html(showListsHtml)
+  $('.content-menu').html(showListsHtml)
   console.log('showLists is a success')
 }
 

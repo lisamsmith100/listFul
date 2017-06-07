@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background: url('./img/jonesislandsunset.jpg') center;
+  background: url('./img/lagoonnebula.jpg') center;
   display: block;
   margin: 0px;
   padding: 0px;
@@ -12,11 +12,13 @@ body {
   background-position:center;
   outline:none;
   color: #f0720a;
+  font-family:system-ui;
 }
 
 h1 {
   margin-left: 10px;
-  color: #d3e37f;
+  // color: #dbdef0;
+  color: #8d9ce7;
 }
 
 li {
@@ -33,11 +35,11 @@ li {
 
 
 p {
-  color: #d3e37f;
+  color: #8d9ce7;
 }
 
 legend {
-  color: #d3e37f;
+  color: #8d9ce7;
   border:none;
 }
 
@@ -46,23 +48,24 @@ form {
   border:none;
   padding: .938em 1.875em;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: title;
   text-shadow: 0 .063em #154969;
   cursor:pointer;
   font: bold 1.8rem;
+  color: #8e9097;
 }
 input[type=text] {
     float:none;
     display: inline-block;
     padding: .938em 1.875em;
-    border: .094em solid #829c5d;
+    border: .094em solid #892667;
     border-radius: .625em;
-    background-color: #d1d6bc;
+    background-color: #dbdef0;
     box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
     color: #3f60ba;
     text-decoration: none;
     text-transform: uppercase;
-    text-shadow: 0 .063em #154969;
+    text-shadow: 0 .063em #eff1f6;
     cursor:pointer;
     font: bold 1.8rem;
 }
@@ -73,7 +76,7 @@ input[type=password] {
     padding: .938em 1.875em;
     border: .094em solid #829c5d;
     border-radius: .625em;
-    background-color: #d1d6bc;
+    background-color: #dbdef0;
     box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #244b0b, inset 0 -0.188em #b1ce7d;
     color: #3f60ba;
     text-decoration: none;
@@ -89,7 +92,7 @@ input[type=submit] {
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
   border-radius: .625em;
-  background-color: #d3e37f;
+  background-color: #dbdef0;
   box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
@@ -101,6 +104,31 @@ input[type=submit] {
 
 fieldset {
   border:none;
+  color: #eff1f6;
+}
+
+.column1 {
+  float:left;
+  margin:0;
+  width:33%;
+  column-fill: balance;
+  border-radius: white;
+}
+
+.column2 {
+  float:left;
+  margin:0;
+  width:33%;
+  column-fill: balance;
+  border-radius: white;
+}
+
+.column3 {
+  float:left;
+  margin:0;
+  width:33%;
+  column-fill: balance;
+  border-radius: white;
 }
 
 .hiding {
@@ -113,7 +141,7 @@ fieldset {
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
   border-radius: .625em;
-  background-color: #d3e37f;
+  background-color: #dbdef0;
   box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
@@ -123,11 +151,11 @@ fieldset {
   font: bold 1.8rem;
 }
 .btn:hover {
-   background-color: #c8ea14;
+   background-color: #dbdef0;
    box-shadow: 0 .125em #3a4d90, inset 0 .063em #c5e7b0, inset 0 -0.188em #154969;
 }
 .btn:active {
-   box-shadow: inset 0 0 1.094em #51b207, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
+   box-shadow: inset 0 0 1.094em #8e9098, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
 }
 
 .auth-btn {
@@ -136,7 +164,7 @@ fieldset {
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
   border-radius: .625em;
-  background-color: #d3e37f;
+  background-color: #dbdef0;
   box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
@@ -147,11 +175,11 @@ fieldset {
 }
 
 .auth-btn:hover {
-   background-color: #c8ea14;
+   background-color: #d2d3f4;
    box-shadow: 0 .125em #3a4d90, inset 0 .063em #c5e7b0, inset 0 -0.188em #154969;
 }
 .auth-btn:active {
-   box-shadow: inset 0 0 1.094em #51b207, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
+   box-shadow: inset 0 0 1.094em #8e9098, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
 }
 
 .auth-input {
@@ -160,7 +188,7 @@ fieldset {
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
   border-radius: .625em;
-  background-color: #d3e37f;
+  background-color: #dbdef0;
   box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
@@ -170,13 +198,13 @@ fieldset {
   font: bold 1.8rem;
 }
 
-.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input {
+.list-id-input .list-title-input .list-backstory-input .list-stopper-input .list-status-input .list-deleted_flag-input {
   float:left;
   display: inline-block;
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
   border-radius: .625em;
-  background-color: #d3e37f;
+  background-color: #dbdef0;
   box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
@@ -186,12 +214,12 @@ fieldset {
   font: bold 1.8rem;
 }
 
-.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input:hover {
+.list-id-input .list-title-input .list-backstory-input .list-stopper-input .list-status-input .list-deleted_flag-input:hover {
   background-color: #c8ea14;
   box-shadow: 0 .125em #3a4d90, inset 0 .063em #c5e7b0, inset 0 -0.188em #154969;
 }
 
-.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input:active {
+.list-id-input .list-title-input .list-backstory-input .list-stopper-input .list-status-input .list-deleted_flag-input:active {
    box-shadow: inset 0 0 1.094em #51b207, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
 }
 
@@ -201,7 +229,8 @@ fieldset {
 
 h2 {
   // color: #cbcdd4;
-  color: #f0720a;
+  // color: #f0720a;
+  color: #dbdef0;
   // color: #0c2d85;
   text-decoration: none;
   text-transform: uppercase;
@@ -210,19 +239,19 @@ h2 {
   font: bold 1.8rem;
 }
 
-#showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
+#showAllLists,#addNewList, #showOneList, #updateOneList, #clearList, #removeOneList {
   float:none;
 }
 
-#showAllHnD {
+#showAllLists {
   margin-left: 25px;
 }
 
 #tagline {
-  color: #d6d8ec;
+  color: #8d9ce7;
 }
 
-#addEntryFailure {
+#addListFailure {
   color: ec0dcc;
   // font: italic;
 }

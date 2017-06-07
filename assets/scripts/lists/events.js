@@ -42,7 +42,7 @@ const onDeleteList = function (event) {
   .fail(ui.deleteListFailure)
 }
 
-const addHandlers = function (event) {
+const addListHandlers = function (event) {
   $('#showAllLists').on('click', onShowLists)
   $('#addNewLists').on('submit', onAddList)
   $('#updateOneLists').on('submit', onUpdateList)
@@ -53,7 +53,7 @@ const addHandlers = function (event) {
 }
 
 module.exports = {
-  addHandlers,
+  addListHandlers,
   onShowLists,
   onAddList,
   onUpdateList,

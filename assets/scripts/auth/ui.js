@@ -32,9 +32,9 @@ const signInSuccess = (data) => {
   $('.user-status').html('Welcome.  You are signed in.')
   $('.sign-in').find('input:text, select, textarea').val('')
   $('.sign-in').find('input:text, input:password, select, textarea').val('')
-  api.showEntries(data)
-    .then(ui.showEntriesSuccess)
-    .catch(ui.showEntriesFailure)
+  api.showLists(data)
+    .then(ui.showListsSuccess)
+    .catch(ui.showListsFailure)
 }
 
 const signInFailure = (error) => {

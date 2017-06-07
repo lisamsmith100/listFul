@@ -14,7 +14,7 @@ const showTempsSuccess = (data) => {
     return a.id - b.id
   })
   const showTempsHtml = showTempTemplate({ lists: data.lists })
-  $('.content').html(showTempsHtml)
+  $('.content-menu').html(showTempsHtml)
   console.log('showTemps is a success')
 }
 
