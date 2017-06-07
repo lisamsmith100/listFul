@@ -1,31 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>listFul</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>listFul-under construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <!-- Load Facebook SDK for JavaScript -->
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script>
-    </head>
-    <body class="container-fluid">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- Load Facebook SDK for JavaScript -->
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+</head>
+<body class="container-fluid">
+  <div id="fb-root"></div>
+    <!-- <h1>listFul</h1>
+    <p>Make a list with this app.</p>
+    <img src="./assets/styles/img/pluto-natural.png"> -->
+    <!-- Navigation -->
+
+    <div class="background">
       <h1>listFul</h1>
-      <p>Make a list with this app.</p>
-      <img src="./assets/styles/img/pluto-natural.png">
+      <p id="tagline">An app for the chronic lister.</p>
+      <!-- <h1>User Information:</h1> -->
+      <nav class="user-info">
+        <div class="user-status">
+         <p>User Status</p>
+        </div>
+          <form class="sign-up first-display">
+            <fieldset>
+              <!-- <legend>Sign up!</legend> -->
+              <input class="auth-input" id="sign-up" type="text" name="credentials[email]" value="" placeholder="email">
+              <input class="auth-input" type="password" name="credentials[password]" value="" placeholder="password">
+              <input class="auth-input" type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+              <input class="auth-btn" type="submit" name="submit" value="Sign up">
+            </fieldset>
+          </form><br/>
 
+          <form class="sign-in first-display">
+            <fieldset>
+              <!-- <legend>Sign in!</legend> -->
+              <input class="auth-input" id="sign-in" type="text" name="credentials[email]" value="" placeholder="email">
+              <input class="auth-input" type="password" name="credentials[password]" value="" placeholder="password">
+              <input class="auth-btn" type="submit" name="submit" value="Sign in">
+            </fieldset>
+          </form><br/>
 
+          <form class="sign-out logged-in-display hiding">
+            <fieldset>
+              <!-- <legend>Sign out!</legend> -->
+              <input class="auth-btn" type="submit" name="submit" value="Sign out">
+            </fieldset>
+          </form><br/>
+
+          <form class="change-password logged-in-display hiding">
+            <fieldset>
+              <!-- <legend>Change Password</legend> -->
+              <input class="auth-input" type="password" name="passwords[old]" value="" placeholder="Old Password">
+              <input class="auth-input" type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input class="auth-btn" type="submit" name="submit" value="Change Password">
+            </fieldset>
+          </form><br/>
+        </nav>
+      <a id="top"></a>
+
+    <section>
+    <!-- <div class="list-button-div">
+    <button id="showAllHnD" class="btn btn-default">Show All Your List of Hopes and Dreams</button><br> -->
+
+      <form id="addNewList" class="logged-in-display hiding">
+        <fieldset>
+          <legend>Create a List</legend>
+            <div id="addListFailure"> </div>
+          <input class="list_name-input" type="text" name="list[list_name]" value="" placeholder="new list_name-required">
+          <input class="list_category-input" type="text" name="list[list_category]" value="" placeholder="list_category">
+          <!-- <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
+          <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
+          <input class="list-id-btn" type="submit" name="submit" value="Add List">
+        </fieldset>
+      </form><br/>
+
+      <!-- <form id="updateOneHnD" class="logged-in-display hiding">
+        <fieldset>
+          <legend>Update A Particular Hope or Dream</legend>
+            <div id="updateListFailure"> </div>
+          <input class="list-id-input" type="text" name="entry[id]" value="" placeholder="id no.-required">
+          <input class="entry-list_name-input" type="text" name="entry[list_name]" value="" placeholder="title">
+          <input class="entry-list_category-input" type="text" name="entry[list_category]" value="" placeholder="backstory">
+          <input class="entry-stopper-input" type="text" name="entry[stopper]" value="" placeholder="stopper">
+          <input class="entry-status-input" type="text" name="entry[status]" value="" placeholder="status">
+          <input class="entry-id-btn" type="submit" name="submit" value="Update List">
+        </fieldset>
+        <div class="special-note">(Id No. Must be One of Those in Lists Below)<br/>
+        (Warning: if there is text in the entry already and you leave an update field blank, the updated item field will be blank.)</div>
+      </form><br/>
+
+      <form id="deleteOneHnD" class="logged-in-display hiding">
+        <fieldset>
+          <legend>Delete A Particular Hope or Dream Forever</legend>
+            <div id="deleteListFailure"> </div>
+          <input class="entry-id-input" type="text" name="entry[id]" value="" placeholder="id no.-required">
+          <input class="entry-id-btn" type="submit" name="submit" value="Delete List Forever">
+        </fieldset>
+        <div class="special-note">(Id No. Must be One of Those in Lists Below)</div>
+      </form><br/>
+    </div> -->
+
+    <div id="content" class="content">
+    </div>
+  </section>
+  <section id="handlebars-stuff">
+    <div id="content" class="content">
+    </div>
+  </section>
 
       <!-- this is the facebook generated code, just for fun no analytics connected at this time -->
       <div class="fb-like logged-in-display hiding"

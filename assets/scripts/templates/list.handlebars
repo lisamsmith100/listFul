@@ -1,0 +1,15 @@
+{{#each lists as |list|}}
+
+<!-- goal: each list's information is displayed within an ul with a data-id attribute. -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <ul id="delete"><h2><data-id="{{list.id}}">{{list.list_name}}</h1>
+      <li>Category: {{list.list_category}}
+      <!-- <li>Stopper: {{list.list_}}
+      <li>Status: {{list.status}}
+      <li>ID No.: {{list.id}} -->
+      <!-- <li>Date Added: {{list.date_added}}
+      <li>Last-Updated: {{list.updated_at}} -->
+      <!-- <li>Hide (Deleted_flag) {{list.deleted_flag}} -->
+  </ul>
+{{/each}}
