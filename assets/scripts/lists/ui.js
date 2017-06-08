@@ -7,6 +7,7 @@ const updateListTemplate = require('../templates/lists.handlebars')
 const store = require('../store.js')
 const listsEvents = require('./events.js')
 const listsApi = require('./api.js')
+const itemEvents = require('./item-events.js')
 
 const showListsSuccess = (data) => {
   console.log('data is ', data)
@@ -14,6 +15,7 @@ const showListsSuccess = (data) => {
     return a.id - b.id
   })
   const showListsHtml = showListsTemplate({ lists: data.lists })
+  itemEvents.addListItemHandlers()
   $('.content-menu').html(' ')
   $('.content-menu').html(showListsHtml)
   console.log('showLists is a success')

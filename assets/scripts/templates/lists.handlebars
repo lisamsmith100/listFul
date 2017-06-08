@@ -17,10 +17,10 @@
   <!-- </ul>
 {{/each}} -->
 
-<div name="list-list" class='list-list' width='100%'>
+<div name="list-list list-link" class='list-list' width='100%'>
   {{#each lists as |list|}}
   <div class='list-{{list.id}} list'>
-    <ul><h1><a href='#list-menu' id="{{list.id}}" class="list-menu-link lead">{{list.list_name}}</a></h1><br/>
+    <ul><h1><a href='#list-link' id="{{list.id}}" class="list-menu-link lead">{{list.list_name}}</a></h1><br/>
       <li>ID: {{list.id}}</li>
       <li>Category: {{list.list_category}}</li>
     <!-- <input type='button' value='Update' id='list-update-{{list.id}}' class='list-menu'>
