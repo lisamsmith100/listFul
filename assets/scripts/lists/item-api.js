@@ -3,11 +3,20 @@
 const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
+// const listItemsEvents = require('./item-events.js')
 
-const showListItems = function (data) {
+const showListItems = function (id) {
   console.log('called showListItems in the list/item-api.js')
+  // console.log('data received by api/showListItems function is ', data)
+  // console.log('store is ', store)
+  // console.log('list_item.id is ', list_item.id)
+  // const store = data
+  // console.log('Running $(data).attr(id) is ', $(data).attr('id'))
+  // const listid = $(data).attr('id')
+  // const listID = $(data).attr('id')
+  // const list_id = data.id
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + store.list.id + '/list_items/' + store.list_item.id,
+    url: config.apiOrigin + '/lists/' + id + '/list_items/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

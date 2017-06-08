@@ -8,7 +8,15 @@ const store = require('../store.js')
 const onShowListItems = function (event) {
   event.preventDefault()
   console.log('onShowListItems button has been clicked')
-  listItemsApi.showListItems()
+  console.log('data received by events/onShowListItems function is ', event.target)
+  const data = event.target
+  console.log('data is ', data)
+  console.log('store is ', store)
+  console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
+  const listid = $(data).attr('id')
+  console.log('listid is ', listid)
+  listItemsApi.showListItems(listid)
+
   .then(listItemsUi.showListItemssSuccess)
   .catch(listItemsUi.showListItemsFailure)
 }
