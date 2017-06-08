@@ -74,7 +74,6 @@ const deleteListSuccess = (data) => {
   $('#delete').html(' ')
   listsApi.showLists(data)
     .then(showListsSuccess)
-  $(this).find('form').trigger('reset')
     .then($('#deleteListFailure').html(' '))
     .catch(showListsFailure)
 }
