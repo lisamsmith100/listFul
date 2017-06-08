@@ -1,14 +1,10 @@
 <div name="list_item-list_item" class='list_item-list_item' width='100%'>
   {{#each list_items as |list_item|}}
-  <!-- <div class='list_item-{{list_item.id}} list_item'> -->
     <ul>{{list_item.list_item}}</h1><br/>
       <li>ID: {{list_item.id}}</li>
       <li>Category: {{list.list_item_category}}</li>
       <input type='button' value='Update Item' id='list-item-update-{{list_item.id}}' class='list-menu'>
       <input type='button' value='Delete Item' id='list-item-delete-{{list_item.id}} deleteOneListItem deleteListItemFailure' class='list-item-menu'>
   </div>
-  <!-- <hr> -->
   {{/each}}
 </div>
-
-<!-- <h1><a href='#list-item-menu' id="{{list_item.id}}" class="list-item-menu-link lead">{{list_items.list_item_name}}</a> -->

@@ -16,8 +16,7 @@ const onShowListItems = function (event) {
   const listid = $(data).attr('id')
   console.log('listid is ', listid)
   listItemsApi.showListItems(listid)
-
-  .then(listItemsUi.showListItemssSuccess)
+  .then(listItemsUi.showListItemsSuccess)
   .catch(listItemsUi.showListItemsFailure)
 }
 

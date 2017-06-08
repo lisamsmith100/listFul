@@ -9,12 +9,12 @@ const listItemsEvents = require('./item-events.js')
 const listItemsApi = require('./item-api.js')
 
 const showListItemsSuccess = (data) => {
-  console.log('data is ', data)
-  store.listID = $(this).attr('id')
+  console.log('item-ui data is ', data)
+  // store.listID = $(this).attr('id')
   data.list_items.sort(function (a, b) {
     return a.id - b.id
   })
-  const showListItemsHtml = showListItemsTemplate({ lists: data.list_items })
+  const showListItemsHtml = showListItemsTemplate({ list_items: data.list_items })
   $('.content-items').html(' ')
   $('.content-items').html(showListItemsHtml)
   console.log('showListItems is a success')

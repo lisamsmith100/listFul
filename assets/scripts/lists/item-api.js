@@ -7,14 +7,6 @@ const store = require('../store')
 
 const showListItems = function (id) {
   console.log('called showListItems in the list/item-api.js')
-  // console.log('data received by api/showListItems function is ', data)
-  // console.log('store is ', store)
-  // console.log('list_item.id is ', list_item.id)
-  // const store = data
-  // console.log('Running $(data).attr(id) is ', $(data).attr('id'))
-  // const listid = $(data).attr('id')
-  // const listID = $(data).attr('id')
-  // const list_id = data.id
   return $.ajax({
     url: config.apiOrigin + '/lists/' + id + '/list_items/',
     method: 'GET',
