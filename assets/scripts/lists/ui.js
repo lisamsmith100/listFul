@@ -46,10 +46,12 @@ const addListFailure = (error) => {
 }
 
 const updateListSuccess = (data) => {
-  const showListsHtml = showListsTemplate({ lists: data.lists })
+  console.log('data.list is ', data)
+  const showListsHtml = showListsTemplate({ lists: data.list })
   const updateInfo = data
   console.log('data.list is ', data)
-  const updateListHtml = updateListTemplate({ list: data.list })
+  const updateListHtml = updateListTemplate({ lists: data.list })
+  console.log('data.list is ', data)
   console.log('updateListHtml = ', updateListHtml)
   $('.content').replace(showListsHtml)
   $('#updateOneList').find('input:text, select, textarea').val('')
