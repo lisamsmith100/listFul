@@ -29,8 +29,8 @@ const onUpdateListTemplate = function (event) {
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
   listsTemplatesApi.updateListTemplate(data)
-  .done(listsTemplatesUi.updateListTemplateSuccess)
-  .fail(listsTemplatesUi.updateListTemplateFailure)
+  .then(listsTemplatesUi.updateListTemplateSuccess)
+  .catch(listsTemplatesUi.updateListTemplateFailure)
 }
 
 const onDeleteListTemplate = function (event) {
@@ -43,18 +43,18 @@ const onDeleteListTemplate = function (event) {
   .fail(listsTemplatesUi.deleteListTemplateFailure)
 }
 
-const addHandlers = function (event) {
+const addListTemplateHandlers = function (event) {
   $('#showAllListTemplates').on('click', onShowListTemplates)
-  $('#addNewListTemplates').on('submit', onAddListTemplate)
-  $('#updateOneListTemplates').on('submit', onUpdateListTemplate)
-  $('#deleteOneListTemplates').on('submit', onDeleteListTemplate)
-  $('#addNewListTemplates').trigger('reset')
-  $('#updateOneListTemplates').trigger('reset')
-  $('#deleteOneListTemplates').trigger('reset')
+  $('#addNewListTemplate').on('submit', onAddListTemplate)
+  $('#updateOneListTemplate').on('submit', onUpdateListTemplate)
+  $('#deleteOneListTemplate').on('submit', onDeleteListTemplate)
+  $('#addNewListTemplate').trigger('reset')
+  $('#updateOneListTemplate').trigger('reset')
+  $('#deleteOneListTemplate').trigger('reset')
 }
 
 module.exports = {
-  addHandlers,
+  addListTemplateHandlers,
   onShowListTemplates,
   onAddListTemplate,
   onUpdateListTemplate,

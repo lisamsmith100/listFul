@@ -51,12 +51,15 @@ const signOutSuccess = () => {
   $('.first-display').removeClass('hiding')
   $('.logged-in-display').addClass('hiding')
   $('.user-status').html('You are no longer signed in.')
-  $('.content').html(' ')
-  $('#addNewHnD').trigger('reset')
-  $('#updateOneHnD').trigger('reset')
-  $('#deleteOneHnD').trigger('reset')
+  $('.content-menu').html(' ')
+  $('#addNewList').trigger('reset')
+  $('#updateOneList').trigger('reset')
+  $('#deleteOneList').trigger('reset')
   $('#showAllLists').toggle('reset')
   $('#showAllListTemplates').trigger('reset')
+  $('#addNewListTemplate').trigger('reset')
+  $('#updateOneListTemplate').trigger('reset')
+  $('#deleteOneListTemplate').trigger('reset')
 }
 
 const signOutFailure = (error) => {

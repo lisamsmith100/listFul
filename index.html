@@ -131,10 +131,10 @@
 
       <!-- Templates start here -->
       <!-- <button id="showAllListTemplates" class="btn btn-default">Show All Templates</button><br> -->
-      <form id="addNewTemplate" class="logged-in-display hiding">
+      <form id="addNewListTemplate" class="logged-in-display hiding">
         <fieldset>
           <!-- <legend>Create a List</legend> -->
-          <div id="addTemplateFailure"> </div>
+          <div id="addListTemplateFailure"> </div>
           <input class="template_name-input" type="text" name="template[template_name]" value="" placeholder="new template_name-required">
           <input class="template_category-input" type="text" name="template[template_category]" value="" placeholder="template_category">
           <!-- <input class="template-stopper-input" type="text" name="template[stopper]" value="" placeholder="stopper">
@@ -143,10 +143,10 @@
         </fieldset>
       </form><br/>
 
-      <form id="updateOneTemplate" class="logged-in-display hiding">
+      <form id="updateOneListTemplate" class="logged-in-display hiding">
         <fieldset>
           <legend>Update A Template</legend>
-          <div id="updateTemplateFailure"> </div>
+          <div id="updateListTemplateFailure"> </div>
           <input class="template-id-input" type="text" name="template[id]" value="" placeholder="id no.-required">
           <input class="template-template_name-input" type="text" name="template[template_name]" value="" placeholder="title">
           <!-- <input class="template-template_category-input" type="text" name="template[list_category]" value="" placeholder="backstory">
@@ -158,10 +158,10 @@
         (Warning: if there is text in the list already and you leave an update field blank, the updated item field will be blank.)</div>
       </form><br/>
 
-      <form id="deleteOneTemplate" class="logged-in-display hiding">
+      <form id="deleteOneListTemplate" class="logged-in-display hiding">
         <fieldset>
           <legend>Delete A Template</legend>
-            <div id="deleteTemplateFailure"> </div>
+            <div id="deleteListTemplateFailure"> </div>
           <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
           <input class="list-id-btn" type="submit" name="submit" value="Delete Template Forever">
         </fieldset>

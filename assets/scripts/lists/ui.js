@@ -5,8 +5,8 @@ const addListTemplate = require('../templates/lists.handlebars')
 const updateListTemplate = require('../templates/lists.handlebars')
 // const deleteListTemplate = require('../templates/list.handlebars')
 const store = require('../store.js')
-const events = require('./events.js')
-const api = require('./api.js')
+const listsEvents = require('./events.js')
+const listsApi = require('./api.js')
 
 const showListsSuccess = (data) => {
   console.log('data is ', data)
@@ -14,6 +14,7 @@ const showListsSuccess = (data) => {
     return a.id - b.id
   })
   const showListsHtml = showListsTemplate({ lists: data.lists })
+  $('.content-menu').html(' ')
   $('.content-menu').html(showListsHtml)
   console.log('showLists is a success')
 }
@@ -29,10 +30,10 @@ const addListSuccess = (data) => {
   console.log('data.list is ', data.list)
   const addListHtml = addListTemplate({ lists: data.lists })
   console.log('addListHtml = ', addListHtml)
-  $('.content').append(addListHtml)
+  $('.content-menu').append(addListHtml)
   $('#addNewLists').find('input:text, select, textarea').val('')
   console.log('addList is a success')
-  api.showLists(data)
+  listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#addListFailure').html(' '))
     .catch(showListsFailure)
@@ -45,15 +46,16 @@ const addListFailure = (error) => {
 }
 
 const updateListSuccess = (data) => {
+  const showListsHtml = showListsTemplate({ lists: data.lists })
   const updateInfo = data
   console.log('data.list is ', data)
   const updateListHtml = updateListTemplate({ list: data.list })
   console.log('updateListHtml = ', updateListHtml)
   $('.content').replace(showListsHtml)
   $('#updateOneList').find('input:text, select, textarea').val('')
-  events.onShowLists()
+  listsEvents.onShowLists()
   console.log('updateList is a success')
-  api.showLists(data)
+  listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#updateListFailure').html(' '))
     .catch(showListsFailure)
@@ -70,7 +72,7 @@ const deleteListSuccess = (data) => {
   $('#deleteOneLists').find('input:text, select, textarea').val('')
   console.log('data is ', data)
   $('#delete').html(' ')
-  api.showLists(data)
+  listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#deleteListFailure').html(' '))
     .catch(showListsFailure)

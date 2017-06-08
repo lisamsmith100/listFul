@@ -5,15 +5,16 @@ const addTempTemplate = require('../templates/temps.handlebars')
 const updateTempTemplate = require('../templates/temps.handlebars')
 // const deleteTempTemplate = require('../templates/temp.handlebars')
 const store = require('../store.js')
-const events = require('./events.js')
-const api = require('./api.js')
+const listsTemplatesEvents = require('./events.js')
+const listsTemplatesApi = require('./api.js')
 
-const showTempsSuccess = (data) => {
+const showListTemplatesSuccess = (data) => {
   console.log('data is ', data)
   data.templates.sort(function (a, b) {
     return a.id - b.id
   })
   const showTempsHtml = showTempsTemplate({ templates: data.templates })
+  $('.content-menu').html(' ')
   $('.content-menu').html(showTempsHtml)
   console.log('showTemps is a success')
 }
@@ -29,11 +30,11 @@ const addTempSuccess = (data) => {
   console.log('data.template is ', data.template)
   const addTempHtml = addTempTemplate({ templates: data.templates })
   console.log('addTempHtml = ', addTempHtml)
-  $('.content').append(addTempHtml)
-  $('#addNewTemps').find('input:text, select, textarea').val('')
+  $('.content-menu').append(addTempHtml)
+  $('#addNewTemplates').find('input:text, select, textarea').val('')
   console.log('addTemp is a success')
-  api.showTemps(data)
-    .then(showTempsSuccess)
+  listsTemplatesApi.showTempsTemplate(data)
+    .then(showListTemplatesSuccess)
     .then($('#addTempFailure').html(' '))
     .catch(showTempsFailure)
 }
@@ -48,13 +49,14 @@ const updateTempSuccess = (data) => {
   const updateInfo = data
   console.log('data.list is ', data)
   const updateTempHtml = updateTempTemplate({ list: data.template })
+  const showTempsHtml = showTempsTemplate({ templates: data.templates })
   console.log('updateTempHtml = ', updateTempHtml)
   $('.content').replace(showTempsHtml)
   $('#updateOneTemp').find('input:text, select, textarea').val('')
-  events.onShowTemps()
+  listsTemplatesEvents.onShowTemps()
   console.log('updateTemp is a success')
-  api.showTemps(data)
-    .then(showTempsSuccess)
+  listsTemplatesApi.showListTemplates(data)
+    .then(showListTemplatesSuccess)
     .then($('#updateTempFailure').html(' '))
     .catch(showTempsFailure)
 }
@@ -70,8 +72,8 @@ const deleteTempSuccess = (data) => {
   $('#deleteOneTemps').find('input:text, select, textarea').val('')
   console.log('data is ', data)
   $('#delete').html(' ')
-  api.showTemps(data)
-    .then(showTempsSuccess)
+  listsTemplatesApi.showTemps(data)
+    .then(showListTemplatesSuccess)
     .then($('#deleteTempFailure').html(' '))
     .catch(showTempsFailure)
 }
@@ -83,7 +85,7 @@ const deleteTempFailure = (error) => {
 }
 
 module.exports = {
-  showTempsSuccess,
+  showListTemplatesSuccess,
   showTempsFailure,
   addTempSuccess,
   addTempFailure,

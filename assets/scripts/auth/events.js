@@ -11,7 +11,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   // console.log('signup data is ', data)
   api.signUp(data)
-  .done(ui.signUpSuccess)
+  .then(ui.signUpSuccess)
   .fail(ui.signUpFailure)
 }
 
@@ -21,8 +21,8 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   // console.log('signin data is ', data)
   api.signIn(data)
-  .then(listsApi.onShowLists)
-  .done(ui.signInSuccess)
+  // .then(listsApi.onShowLists)
+  .then(ui.signInSuccess)
   .fail(ui.signInFailure)
 }
 
@@ -30,7 +30,7 @@ const onSignOut = function (event) {
   event.preventDefault()
   // console.log('sign out button has been clicked')
   api.signOut()
-  .done(ui.signOutSuccess)
+  .then(ui.signOutSuccess)
   .fail(ui.signOutFailure)
 }
 
@@ -40,7 +40,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   // console.log('change password data is ', data)
   api.changePassword(data)
-  .done(ui.changePasswordSuccess)
+  .then(ui.changePasswordSuccess)
   .fail(ui.changePasswordFailure)
 }
 
