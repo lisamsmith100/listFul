@@ -53,9 +53,9 @@ const updateListSuccess = (data) => {
   const updateListHtml = updateListTemplate({ lists: data.list })
   console.log('data.list is ', data)
   console.log('updateListHtml = ', updateListHtml)
-  $('.content').replace(showListsHtml)
+  $('.content-menu').append(showListsHtml)
   $('#updateOneList').find('input:text, select, textarea').val('')
-  listsEvents.onShowLists()
+  listsEvents.onShowLists
   console.log('updateList is a success')
   listsApi.showLists(data)
     .then(showListsSuccess)
