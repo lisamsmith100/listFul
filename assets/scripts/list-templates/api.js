@@ -3,7 +3,7 @@
 const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
-cont listsTemplatesEvents = require('./events')
+const listTemplatesEvents = require('./events')
 
 const showListTemplates = function () {
   console.log('called showListTemplates in the list-templates/api.js')
