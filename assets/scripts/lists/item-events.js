@@ -26,16 +26,16 @@ const onAddListItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   // const data = $('#list-create-input').val()
-  console.log('onAddListItem button has been clicked')
-  console.log('data received by item-events/onAddListItems function is ', event.target)
-  console.log('data is ', data)
-  console.log('store is ', store)
-  console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
+  // console.log('onAddListItem button has been clicked')
+  // console.log('data received by item-events/onAddListItems function is ', event.target)
+  // console.log('data is ', data)
+  // console.log('store is ', store)
+  // console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
   const listid = store.current_list_id
-  console.log('listid is ', listid)
+  // console.log('listid is ', listid)
   listItemsApi.addListItem(listid, data)
   .then(listItemsUi.addListItemSuccess)
-  .done(listItemsUI.showListItems)
+  .done(listItemsUi.showListItems)
   .fail(listItemsUi.addListItemFailure)
 }
 //
@@ -51,31 +51,35 @@ const onAddListItem = function (event) {
 //   .catch(listsUi.updateListFailure)
 // }
 //
-// const onDeleteList = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   // const data = event.target.list[id]
-//   // .split('-')
-// //   console.log('event is ', event)
-// //   console.log('data being sent to api is ', data)
-//   listsApi.deleteList(data)
-//   .then(listsUi.deleteListSuccess)
-//   .catch(listsUi.deleteListFailure)
-// // }
-//   console.log('event is ', event)
-//   console.log('data being sent to api is ', data)
-//   listsApi.deleteList(data)
-//   .then(listsUi.deleteListSuccess)
-//   .fail(listsUi.deleteListFailure)
-// }
-//
-// const onNoteNameClick = function (event) {
-//   console.log('note-branch clicked')
+const onDeleteListItem = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(event.target)
+  console.log('event is ', event)
+  const data = event.target.list_item[id]
+  // [id].split('-')
+  // const data = $('#list-create-input').val()
+  console.log('onDeleteListItem button has been clicked')
+  console.log('data received by item-events/onDeleteListItem function is ', event.target)
+  console.log('data is ', data)
+  console.log('store is ', store)
+  console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
+  const listid = store.current_list_id
+  console.log('listid is ', listid)
+  listItemsApi.deleteListItem(listid, data)
+  .then(listItemsUi.deleteListItemSuccess)
+  .done(listItemsUi.showListItems)
+  .fail(listItemsUi.deleteListItemFailure)
+}
+  // console.log('data being sent to api is ', data)
+  // listItemsApi.deleteListItem(data)
+  // .then(listItemsUi.deleteListItemSuccess)
+  // .catch(listItemsUi.deleteListItemFailure)
 // }
 
 const addListItemHandlers = function (event) {
   console.log('addListItemHandlers has been called')
   $(document).on('click', '.list-menu-link', onShowListItems)
+  $(document).on('click', '.deleteOneListItem', onDeleteListItem)
   // $('.list-menu-link').on('submit', onShowListItems)
   // $('.list-menu-link').on('click', onShowListItems)
   // $('#create-list-form').on('submit', onAddList)
@@ -90,8 +94,8 @@ const addListItemHandlers = function (event) {
 module.exports = {
   addListItemHandlers,
   onShowListItems,
-  onAddListItem
+  onAddListItem,
+  onDeleteListItem
   // ,
   // onUpdateListItem,
-  // onDeleteListItem
 }

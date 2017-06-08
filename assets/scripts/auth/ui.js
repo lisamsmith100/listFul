@@ -4,8 +4,8 @@ const store = require('../store.js')
 
 const app = require('../app.js')
 const listsEvents = require('../lists/events.js')
-const api = require('../lists/api.js')
-const ui = require('../lists/ui.js')
+const listsApi = require('../lists/api.js')
+const listsUi = require('../lists/ui.js')
 
 const signUpSuccess = (data) => {
   store.user = data.user
@@ -32,9 +32,9 @@ const signInSuccess = (data) => {
   $('.user-status').html('Welcome.  You are signed in.')
   $('.sign-in').find('input:text, select, textarea').val('')
   $('.sign-in').find('input:text, input:password, select, textarea').val('')
-  api.onShowLists(data)
-    .then(ui.showListsSuccess)
-    .catch(ui.showListsFailure)
+  listsApi.showLists()
+    .then(listsUi.showListsSuccess)
+    .catch(listsUi.showListsFailure)
 }
 
 const signInFailure = (error) => {
@@ -52,6 +52,7 @@ const signOutSuccess = () => {
   $('.logged-in-display').addClass('hiding')
   $('.user-status').html('You are no longer signed in.')
   $('.content-menu').html(' ')
+  $('.content-items').html(' ')
   $('#addNewList').trigger('reset')
   $('#updateOneList').trigger('reset')
   $('#deleteOneList').trigger('reset')

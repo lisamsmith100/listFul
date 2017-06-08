@@ -39,6 +39,7 @@ const addListSuccess = (data) => {
   listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#addListFailure').html(' '))
+    .then(listsApi.showLists())
     .catch(showListsFailure)
 }
 

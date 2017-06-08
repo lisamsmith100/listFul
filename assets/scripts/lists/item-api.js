@@ -3,7 +3,8 @@
 const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
-// const listItemsEvents = require('./item-events.js')
+const listItemsEvents = require('./item-events.js')
+const listItemsUi = require('./item-ui')
 
 const showListItems = function (id) {
   console.log('called showListItems in the list/item-api.js')
@@ -30,18 +31,6 @@ const addListItem = function (id, data) {
 }
 
 //
-// const showOneList = function () {
-//   console.log('called showOneList in the list/api.js')
-//   return $.ajax({
-//     url: config.apiOrigin + '/lists/' + store.list.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token}
-//   })
-// }
-//
-
-//
 // const updateList = function (data) {
 //   console.log('called updateList in the list/api.js')
 //   console.log('data is ', data)
@@ -55,25 +44,25 @@ const addListItem = function (id, data) {
 //   })
 // }
 //
-// const deleteList = function (data) {
-//   console.log('called deleteList in the list/api.js')
-//   console.log('data is', data)
-//   console.log('data.id is ', data.list.id)
-//   // console.log('store.id is ', store.list.id)
-//   return $.ajax({
-//     url: config.apiOrigin + '/lists/' + data.list.id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const deleteListItem = function (id, data) {
+  console.log('called deleteListItem in the list/item-api.js')
+  console.log('id in item-api is ', id)
+  console.log('data is ', data)
+  console.log('store is ', store)
+  console.log('data.id is ', data.list_id)
+  console.log('store.id is ', store.list.id)
+  return $.ajax({
+    url: config.apiOrigin + '/lists/' + id + '/list_items/' + data.list_item.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   showListItems,
-  addListItem
-  // ,
-  // showOneList,
-  // updateList,
-  // deleteList
+  addListItem,
+  // updateListItem,
+  deleteListItem
 }
