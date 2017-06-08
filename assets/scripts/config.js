@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://listful-rails-api.herokuapp.com/'
+    production: 'https://listful-rails-api.herokuapp.com'
   }
 }
 

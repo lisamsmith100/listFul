@@ -1,0 +1,26 @@
+<!-- {{#each templates as |template|}} -->
+
+<!-- goal: each template's information is displayed within an ul with a data-id attribute. -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <!-- <ul id="delete"><h2><data-id="{{template.id}}">{{template.template_name}}</h1>
+      <li>Category: {{template.template_category}} -->
+      <!-- <li>Stopper: {{template.template_}}
+      <li>Status: {{template.status}}
+      <li>ID No.: {{template.id}} -->
+      <!-- <li>Date Added: {{template.date_added}}
+      <li>Last-Updated: {{template.updated_at}} -->
+      <!-- <li>Hide (Deleted_flag) {{template.deleted_flag}} -->
+  <!-- </ul>
+{{/each}} -->
+
+<div name="template-template" class='template-template' width='100%'>
+  {{#each templates as |template|}}
+  <div class='template-{{template.id}} template'>
+    <h1><a href='#template-menu' id="{{template.id}}" class="template-menu-link lead">{{template.template_name}}</a></h1>
+    <input type='button' value='Update' id='template-update-{{template.id}}' class='template-menu'>
+    <input type='button' value='Delete' id='template-delete-{{template.id}} deleteOneTemplate deleteTemplateFailure' class='template-menu'>
+  </div>
+  <!-- <hr> -->
+  {{/each}}
+</div>

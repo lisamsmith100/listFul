@@ -248,6 +248,10 @@ h2 {
   font: bold 1.8rem;
 }
 
+.lists-or-templates {
+  float: none;
+}
+
 .list-menu-link {
   color: white;
 }
@@ -282,4 +286,7 @@ h2 {
     // color: #ec720d;
     // color: #0c47c5;
     color: white;
+}
+.list-list {
+  border: none;
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-// const app = require('../app.js')
+const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
 
@@ -51,7 +51,7 @@ const updateList = function (data) {
   })
 }
 
-const deleteList = function (id) {
+const deleteList = function (data) {
   console.log('called deleteList in the list/api.js')
   console.log('data is', data)
   console.log('data.id is ', data.list.id)
@@ -67,6 +67,7 @@ const deleteList = function (id) {
 
 module.exports = {
   showLists,
+  showOneList,
   addList,
   updateList,
   deleteList

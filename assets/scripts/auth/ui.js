@@ -32,9 +32,9 @@ const signInSuccess = (data) => {
   $('.user-status').html('Welcome.  You are signed in.')
   $('.sign-in').find('input:text, select, textarea').val('')
   $('.sign-in').find('input:text, input:password, select, textarea').val('')
-  api.showLists(data)
-    .then(ui.showListsSuccess)
-    .catch(ui.showListsFailure)
+  // api.showLists(data)
+  //   .then(ui.showListsSuccess)
+  //   .catch(ui.showListsFailure)
 }
 
 const signInFailure = (error) => {
@@ -55,6 +55,8 @@ const signOutSuccess = () => {
   $('#addNewHnD').trigger('reset')
   $('#updateOneHnD').trigger('reset')
   $('#deleteOneHnD').trigger('reset')
+  $('#showAllLists').toggle('reset')
+  $('#showAllListTemplates').trigger('reset')
 }
 
 const signOutFailure = (error) => {

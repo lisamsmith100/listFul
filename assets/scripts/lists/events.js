@@ -30,17 +30,18 @@ const onUpdateList = function (event) {
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
   api.updateList(data, store.updateListID)
-  .done(ui.updateListSuccess)
+  .then(ui.updateListSuccess)
   .catch(ui.updateListFailure)
 }
 
 const onDeleteList = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  // const data = getFormFields(event.target)
+  const data = event.target.id.split('-')
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
-  api.deleteList(data)
-  .done(ui.deleteListSuccess)
+  api.deleteList(data[2])
+  .then(ui.deleteListSuccess)
   .catch(ui.deleteListFailure)
 }
 

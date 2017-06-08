@@ -1,8 +1,8 @@
 'use strict'
 
-const showTempTemplate = require('../templates/temp.handlebars')
-const addTempTemplate = require('../templates/temp.handlebars')
-const updateTempTemplate = require('../templates/temp.handlebars')
+const showTempsTemplate = require('../templates/temps.handlebars')
+const addTempTemplate = require('../templates/temps.handlebars')
+const updateTempTemplate = require('../templates/temps.handlebars')
 // const deleteTempTemplate = require('../templates/temp.handlebars')
 const store = require('../store.js')
 const events = require('./events.js')
@@ -10,10 +10,10 @@ const api = require('./api.js')
 
 const showTempsSuccess = (data) => {
   console.log('data is ', data)
-  data.lists.sort(function (a, b) {
+  data.templates.sort(function (a, b) {
     return a.id - b.id
   })
-  const showTempsHtml = showTempTemplate({ lists: data.lists })
+  const showTempsHtml = showTempsTemplate({ templates: data.templates })
   $('.content-menu').html(showTempsHtml)
   console.log('showTemps is a success')
 }
@@ -25,9 +25,9 @@ const showTempsFailure = (error) => {
 
 const addTempSuccess = (data) => {
   console.log('you have reached api function')
-  store.list = data.list
-  console.log('data.list is ', data.list)
-  const addTempHtml = addTempTemplate({ lists: data.lists })
+  store.template = data.template
+  console.log('data.template is ', data.template)
+  const addTempHtml = addTempTemplate({ templates: data.templates })
   console.log('addTempHtml = ', addTempHtml)
   $('.content').append(addTempHtml)
   $('#addNewTemps').find('input:text, select, textarea').val('')
@@ -47,7 +47,7 @@ const addTempFailure = (error) => {
 const updateTempSuccess = (data) => {
   const updateInfo = data
   console.log('data.list is ', data)
-  const updateTempHtml = updateTempTemplate({ list: data.list })
+  const updateTempHtml = updateTempTemplate({ list: data.template })
   console.log('updateTempHtml = ', updateTempHtml)
   $('.content').replace(showTempsHtml)
   $('#updateOneTemp').find('input:text, select, textarea').val('')

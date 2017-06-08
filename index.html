@@ -23,7 +23,7 @@
 <body class="container-fluid">
   <a id="top"></a>
   <div id="fb-root"></div>
-  <h1 class="app-name">listFul</h1>
+  <h1>listFul</h1>
   <p id="tagline">An app for the chronic lister.</p>
 
   <div class="background">
@@ -31,7 +31,7 @@
 
     <div class="user-info">
       <div class="user-status">
-       <p>Welcome.<br/>User Status:  Not currenly logged in.</p>
+       <p>Welcome.  User Status:  Not currenly logged in.</p>
       </div>
       <!-- Sign Up -->
       <form class="sign-up first-display">
@@ -77,12 +77,21 @@
 
     <!-- End of User Information -->
 
+    <!-- Admin Section -->
+  <div class="lists-or-templates logged-in-display hiding">
+    <!-- <button id="showAllLists admin-choice-lists admin-hide-templates" class="btn btn-default">Show All Lists</button><br>
+    <button id="showAllTempTemplates admin-choice-templates admin-hide-templates" class="btn btn-default">Show All Templates</button><br> -->
+    <button id="showAllLists" class="btn btn-default">Show All Lists</button><br>
+    <button id="showAllListTemplates" class="btn btn-default">Show All Templates</button><br>
+  </div>
+  <br/>
+
     <!-- Begin Section for Columns. -->
 
-    <div id="column1">
+    <div id="column1" class="logged-in-display hiding">
 
       <h2>Menu</h2>
-      <button id="showAllLists" class="btn btn-default logged-in-display hiding">Show All Your Lists</button><br>
+      <button id="showAllLists" class="btn btn-default">Show All Your Lists</button><br>
       <form id="addNewList" class="logged-in-display hiding">
         <fieldset>
           <!-- <legend>Create a List</legend> -->
@@ -97,6 +106,7 @@
 
       <form id="updateOneList" class="logged-in-display hiding">
         <fieldset>
+          <legend>Update A List</legend>
           <div id="updateListFailure"> </div>
           <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
           <input class="list-list_name-input" type="text" name="list[list_name]" value="" placeholder="title">
@@ -111,12 +121,52 @@
 
       <form id="deleteOneList" class="logged-in-display hiding">
         <fieldset>
+          <legend>Delete A List</legend>
             <div id="deleteListFailure"> </div>
           <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
           <input class="list-id-btn" type="submit" name="submit" value="Delete List Forever">
         </fieldset>
         <div class="special-note">(Id No. Must be One of Those in Lists Below)</div>
       </form><br/>
+
+      <button id="showAllListTemplates" class="btn btn-default">Show All Templates</button><br>
+      <form id="addNewTemplate" class="logged-in-display hiding">
+        <fieldset>
+          <!-- <legend>Create a List</legend> -->
+          <div id="addTemplateFailure"> </div>
+          <input class="template_name-input" type="text" name="template[template_name]" value="" placeholder="new template_name-required">
+          <input class="template_category-input" type="text" name="template[template_category]" value="" placeholder="template_category">
+          <!-- <input class="template-stopper-input" type="text" name="template[stopper]" value="" placeholder="stopper">
+          <input class="template-status-input" type="text" name="template[status]" value="" placeholder="status"> -->
+          <input class="template-id-btn" type="submit" name="submit" value="Add Template">
+        </fieldset>
+      </form><br/>
+
+      <form id="updateOneTemplate" class="logged-in-display hiding">
+        <fieldset>
+          <legend>Update A Template</legend>
+          <div id="updateTemplateFailure"> </div>
+          <input class="template-id-input" type="text" name="template[id]" value="" placeholder="id no.-required">
+          <input class="template-template_name-input" type="text" name="template[template_name]" value="" placeholder="title">
+          <!-- <input class="template-template_category-input" type="text" name="template[list_category]" value="" placeholder="backstory">
+          <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
+          <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
+          <input class="list-id-btn" type="submit" name="submit" value="Update Template">
+        </fieldset>
+        <div class="special-note">(Id No. Must be One of Those in Templates Below)<br/>
+        (Warning: if there is text in the list already and you leave an update field blank, the updated item field will be blank.)</div>
+      </form><br/>
+
+      <form id="deleteOneTemplate" class="logged-in-display hiding">
+        <fieldset>
+          <legend>Delete A Template</legend>
+            <div id="deleteTemplateFailure"> </div>
+          <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
+          <input class="list-id-btn" type="submit" name="submit" value="Delete Template Forever">
+        </fieldset>
+        <div class="special-note">(Id No. Must be One of Those in Templates Below)</div>
+      </form><br/>
+
       <div id="content-menu" class="content-menu">
     </div>
 
@@ -130,7 +180,7 @@
         <h2>Items</h2>
         <div id="content-items" class="content-items">
         </div>
-      </div>
+       </div>
    </div>
   </div> -->
 

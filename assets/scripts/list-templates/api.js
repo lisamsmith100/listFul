@@ -4,10 +4,10 @@ const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
 
-const showLists = function () {
-  console.log('called showLists in the list/api.js')
+const showListTemplates = function () {
+  console.log('called showListTemplates in the list-templates/api.js')
   return $.ajax({
-    url: config.apiOrigin + '/lists',
+    url: config.apiOrigin + '/templates',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,11 +15,21 @@ const showLists = function () {
   })
 }
 
-const addList = function (data) {
-  console.log('called addList in the list/api.js')
+const showOneListTemplate = function () {
+  console.log('called showOneListTemplate in the list-templates/api.js')
+  return $.ajax({
+    url: config.apiOrigin + '/templates/' + store.template.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token}
+  })
+}
+
+const addListTemplates = function (data) {
+  console.log('called addListTemplates in the list-templates/api.js')
   console.log('data is', data)
   return $.ajax({
-    url: config.apiOrigin + '/lists/',
+    url: config.apiOrigin + '/templates/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -28,11 +38,11 @@ const addList = function (data) {
   })
 }
 
-const updateList = function (data) {
-  console.log('called updateList in the list/api.js')
+const updateListTemplates = function (data) {
+  console.log('called updateListTemplates in the list-templates/api.js')
   console.log('data is ', data)
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + data.list.id,
+    url: config.apiOrigin + '/templates/' + data.template.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -41,12 +51,12 @@ const updateList = function (data) {
   })
 }
 
-const deleteList = function (data) {
-  console.log('called deleteList in the list/api.js')
+const deleteListTemplates = function (data) {
+  console.log('called deleteListTemplates in the list-templates/api.js')
   console.log('data is', data)
-  console.log('data.id is ', data.list.id)
+  console.log('data.id is ', data.template.id)
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + data.list.id,
+    url: config.apiOrigin + '/lists/' + data.template.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,8 +65,9 @@ const deleteList = function (data) {
 }
 
 module.exports = {
-  showLists,
-  addList,
-  updateList,
-  deleteList
+  showListTemplates,
+  showOneListTemplate,
+  addListTemplates,
+  updateListTemplates,
+  deleteListTemplates
 }
