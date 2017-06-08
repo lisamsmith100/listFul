@@ -1,25 +1,25 @@
 'use strict'
 
-const api = require('./api')
-const ui = require('./ui')
+const listsTemplatesApi = require('./api')
+const listsTemplatesUi = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store.js')
 
 const onShowListTemplates = function (event) {
   event.preventDefault()
   console.log('onShowListTemplates button has been clicked')
-  api.showListTemplates()
-  .then(ui.showListTemplatesSuccess)
-  .catch(ui.showListTemplatesFailure)
+  listsTemplatesApi.showListTemplates()
+  .then(listsTemplatesUi.showListTemplatesSuccess)
+  .catch(listsTemplatesUi.showListTemplatesFailure)
 }
 
 const onAddListTemplate = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('data is ', data)
-  api.addListTemplate(data)
-  .done(ui.addListTemplateSuccess)
-  .fail(ui.addListTemplateFailure)
+  listsTemplatesApi.addListTemplate(data)
+  .done(listsTemplatesUi.addListTemplateSuccess)
+  .fail(listsTemplatesUi.addListTemplateFailure)
 }
 
 const onUpdateListTemplate = function (event) {
@@ -28,9 +28,9 @@ const onUpdateListTemplate = function (event) {
   console.log('onUpdateListTemplate has been called')
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
-  api.updateListTemplate(data)
-  .done(ui.updateListTemplateSuccess)
-  .fail(ui.updateListTemplateFailure)
+  listsTemplatesApi.updateListTemplate(data)
+  .done(listsTemplatesUi.updateListTemplateSuccess)
+  .fail(listsTemplatesUi.updateListTemplateFailure)
 }
 
 const onDeleteListTemplate = function (event) {
@@ -38,9 +38,9 @@ const onDeleteListTemplate = function (event) {
   const data = getFormFields(event.target)
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
-  api.deleteListTemplate(data)
-  .done(ui.deleteListTemplateSuccess)
-  .fail(ui.deleteListTemplateFailure)
+  listsTemplatesApi.deleteListTemplate(data)
+  .done(listsTemplatesUi.deleteListTemplateSuccess)
+  .fail(listsTemplatesUi.deleteListTemplateFailure)
 }
 
 const addHandlers = function (event) {

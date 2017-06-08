@@ -25,7 +25,7 @@ $(() => {
 
 const authEvents = require('./auth/events.js')
 const listsEvents = require('./lists/events.js')
-const listTemplateEvents = require('./list-templates/events.js')
+const listsTemplateEvents = require('./list-templates/events.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
