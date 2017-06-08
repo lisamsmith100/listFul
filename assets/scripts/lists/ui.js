@@ -11,6 +11,7 @@ const itemEvents = require('./item-events.js')
 
 const showListsSuccess = (data) => {
   console.log('data is ', data)
+
   data.lists.sort(function (a, b) {
     return a.id - b.id
   })

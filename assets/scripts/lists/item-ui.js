@@ -1,7 +1,7 @@
 'use strict'
 
 const showListItemsTemplate = require('../templates/list-items.handlebars')
-// const addListItemTemplate = require('../templates/list-items.handlebars')
+const addListItemTemplate = require('../templates/list-items.handlebars')
 // const updateListItemTemplate = require('../templates/list-items.handlebars')
 // const deleteListTemplate = require('../templates/list.handlebars')
 const store = require('../store.js')
@@ -25,27 +25,26 @@ const showListItemsFailure = (error) => {
   console.error(error)
 }
 
-// const addListSuccess = (data) => {
-//   console.log('you have reached api function')
-//   store.list = data.list
-//   console.log('data.list is ', data.list)
-//   const addListHtml = addListTemplate({ lists: data.lists })
-//   console.log('addListHtml = ', addListHtml)
-//   $('.content-menu').append(addListHtml)
-//   $('#addNewLists').find('input:text, select, textarea').val('')
-//   console.log('addList is a success')
-//   listsApi.showLists(data)
-//     .then(showListsSuccess)
-//     .then($('#addListFailure').html(' '))
-//     .catch(showListsFailure)
-// }
-//
-// const addListFailure = (error) => {
-//   console.log('addList failed')
-//   console.error(error)
-//   $('#addListFailure').html('We were unable to add your list.  Did you add a title?  Please try again.')
-// }
-//
+const addListItemSuccess = (data) => {
+  console.log('you have reached list-item api function')
+  store.list_item = data.list_item
+  console.log('store.list_item is ', store.list_item)
+  const addListItemHtml = addListItemTemplate({ list_items: data.list_items })
+  console.log('addListItemHtml = ', addListItemHtml)
+  $('.content-items').append(addListItemHtml)
+  $('#addNewListItems').find('input:text, select, textarea').val('')
+  console.log('addListItem is a success')
+    .then(showListItemsSuccess)
+    .then($('#addListItemFailure').html(' '))
+    .catch(showListItemsFailure)
+}
+
+const addListItemFailure = (error) => {
+  console.log('addListItem failed')
+  console.error(error)
+  $('#addListItemFailure').html('We were unable to add your list item.  Did you add a title?  Please try again.')
+}
+
 // const updateListSuccess = (data) => {
 //   console.log('data.list is ', data)
 //   const showListsHtml = showListsTemplate({ lists: data.list })
@@ -89,10 +88,10 @@ const showListItemsFailure = (error) => {
 
 module.exports = {
   showListItemsSuccess,
-  showListItemsFailure
+  showListItemsFailure,
+  addListItemSuccess,
+  addListItemFailure
   // ,
-  // addListSuccess,
-  // addListFailure,
   // updateListSuccess,
   // updateListFailure,
   // deleteListSuccess,

@@ -2,7 +2,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background: url('./img/lagoonnebula.jpg') center;
+  // background: url('./img/lagoonnebula.jpg') center;
+  background: url('./img/blackandwhite.jpg') center;
   display: block;
   margin: 0px;
   padding: 0px;
@@ -27,6 +28,11 @@ h1 {
 
 ul {
   border: none;
+  color: #f6c2ec;
+}
+
+ul:hover {
+  color: #35bae1;
 }
 
 li {
@@ -38,7 +44,8 @@ li {
   font: bold 1.8rem;
   // color: #d1d4f0;
   // color: #d3e37f;
-  color: #8d9ce7;
+  // color: #8d9ce7;
+  color: #797ec1;
 }
 
 
@@ -253,7 +260,7 @@ h2 {
 }
 
 .list-menu-link {
-  color: black;
+  color: #f6c2ec;
   font-weight:bolder;
 }
 
@@ -315,6 +322,10 @@ h2 {
  float:right;
 }
 
+a {
+  color: white;
+}
+
 a:hover {
-  background-color:#f2c24e;
+  background-color:#35bae1;
 }

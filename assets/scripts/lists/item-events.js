@@ -14,22 +14,30 @@ const onShowListItems = function (event) {
   console.log('store is ', store)
   console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
   const listid = $(data).attr('id')
+  store.current_list_id = listid
   console.log('listid is ', listid)
+  console.log('store.current_list_id is ' + store.current_list_id)
   listItemsApi.showListItems(listid)
   .then(listItemsUi.showListItemsSuccess)
   .catch(listItemsUi.showListItemsFailure)
 }
 
-// const onAddList = function (event) {
-//   event.preventDefault()
-//   // const data = getFormFields(event.target)
-//   const data = getFormFields(event.target)
-//   // const data = $('#list-create-input').val()
-//   console.log('Data is: ', data)
-//   listsApi.addList(data)
-//   .done(listsUi.addListSuccess)
-//   .fail(listsUi.addListFailure)
-// }
+const onAddListItem = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // const data = $('#list-create-input').val()
+  console.log('onAddListItem button has been clicked')
+  console.log('data received by item-events/onAddListItems function is ', event.target)
+  console.log('data is ', data)
+  console.log('store is ', store)
+  console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
+  const listid = store.current_list_id
+  console.log('listid is ', listid)
+  listItemsApi.addListItem(listid, data)
+  .then(listItemsUi.addListItemSuccess)
+  .done(listItemsUI.showListItems)
+  .fail(listItemsUi.addListItemFailure)
+}
 //
 // const onUpdateList = function (event) {
 //   event.preventDefault()
@@ -71,7 +79,7 @@ const addListItemHandlers = function (event) {
   // $('.list-menu-link').on('submit', onShowListItems)
   // $('.list-menu-link').on('click', onShowListItems)
   // $('#create-list-form').on('submit', onAddList)
-  // $('#addNewListItem').on('submit', onAddListItem)
+  $('#addNewListItem').on('submit', onAddListItem)
   // $('#updateOneListItem').on('submit', onUpdateListItem)
   // $('#deleteOneListItem').on('submit', onDeleteListItem)
   $('#addNewListItem').trigger('reset')
@@ -81,9 +89,9 @@ const addListItemHandlers = function (event) {
 
 module.exports = {
   addListItemHandlers,
-  onShowListItems
+  onShowListItems,
+  onAddListItem
   // ,
-  // onAddListItem,
   // onUpdateListItem,
   // onDeleteListItem
 }

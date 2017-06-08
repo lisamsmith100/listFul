@@ -15,6 +15,20 @@ const showListItems = function (id) {
     }
   })
 }
+
+const addListItem = function (id, data) {
+  console.log('called addList in the list-item/api.js')
+  console.log('data is', data)
+  return $.ajax({
+    url: config.apiOrigin + '/lists/' + id + '/list_items/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 //
 // const showOneList = function () {
 //   console.log('called showOneList in the list/api.js')
@@ -26,18 +40,7 @@ const showListItems = function (id) {
 //   })
 // }
 //
-// const addList = function (data) {
-//   console.log('called addList in the list/api.js')
-//   console.log('data is', data)
-//   return $.ajax({
-//     url: config.apiOrigin + '/lists/',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+
 //
 // const updateList = function (data) {
 //   console.log('called updateList in the list/api.js')
@@ -67,10 +70,10 @@ const showListItems = function (id) {
 // }
 
 module.exports = {
-  showListItems
+  showListItems,
+  addListItem
   // ,
   // showOneList,
-  // addList,
   // updateList,
   // deleteList
 }
