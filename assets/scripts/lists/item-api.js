@@ -44,15 +44,16 @@ const addListItem = function (id, data) {
 //   })
 // }
 //
-const deleteListItem = function (id, data) {
+const deleteListItem = function (itemID, listID) {
   console.log('called deleteListItem in the list/item-api.js')
-  console.log('id in item-api is ', id)
-  console.log('data is ', data)
-  console.log('store is ', store)
-  console.log('data.id is ', data.list_id)
-  console.log('store.id is ', store.list.id)
+  console.log('itemID in item-api is ', itemID)
+  console.log('listID in item-api is ', listID)
+  // console.log('data is ', data)
+  // console.log('store is ', store)
+  // console.log('data.id is ', data.list_id)
+  // console.log('store.id is ', store.list.id)
   return $.ajax({
-    url: config.apiOrigin + '/lists/' + id + '/list_items/' + data.list_item.id,
+    url: config.apiOrigin + '/lists/' + listID + '/list_items/' + itemID,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

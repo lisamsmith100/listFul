@@ -55,26 +55,23 @@ const onDeleteListItem = function (event) {
   event.preventDefault()
   // const data = getFormFields(event.target)
   console.log('event is ', event)
-  const data = event.target.list_item[id]
+  const itemID = $(this).attr('data-id')
+  const listID = store.current_list_id
+  console.log('item-events id is ', itemID)
+  // const data = event.target.list_item[id]
   // [id].split('-')
   // const data = $('#list-create-input').val()
   console.log('onDeleteListItem button has been clicked')
   console.log('data received by item-events/onDeleteListItem function is ', event.target)
-  console.log('data is ', data)
+  // console.log('data is ', data)
   console.log('store is ', store)
-  console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
-  const listid = store.current_list_id
-  console.log('listid is ', listid)
-  listItemsApi.deleteListItem(listid, data)
+  // console.log('Running $(data).attr(id) gives us ', $(data).attr('id'))
+  // console.log('listid is ', listid)
+  listItemsApi.deleteListItem(itemID, listID)
   .then(listItemsUi.deleteListItemSuccess)
-  .done(listItemsUi.showListItems)
-  .fail(listItemsUi.deleteListItemFailure)
+  .catch(listItemsUi.deleteListItemFailure)
+  .then(listItemsUi.showListItems)
 }
-  // console.log('data being sent to api is ', data)
-  // listItemsApi.deleteListItem(data)
-  // .then(listItemsUi.deleteListItemSuccess)
-  // .catch(listItemsUi.deleteListItemFailure)
-// }
 
 const addListItemHandlers = function (event) {
   console.log('addListItemHandlers has been called')
