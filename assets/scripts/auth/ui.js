@@ -3,7 +3,7 @@
 const store = require('../store.js')
 
 const app = require('../app.js')
-const listEvents = require('../lists/events.js')
+const listsEvents = require('../lists/events.js')
 const api = require('../lists/api.js')
 const ui = require('../lists/ui.js')
 

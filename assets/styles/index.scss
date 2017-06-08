@@ -21,6 +21,14 @@ h1 {
   color: #8d9ce7;
 }
 
+.app-name {
+  text-emphasis-style: sesame;
+}
+
+ul {
+  border: none;
+}
+
 li {
   margin-left: 50px;
   text-decoration: none;
@@ -30,12 +38,12 @@ li {
   font: bold 1.8rem;
   // color: #d1d4f0;
   // color: #d3e37f;
-  color: #f0720a;
+  color: #8d9ce7;
 }
 
 
 p {
-  color: #8d9ce7;
+  color: #f2c24e;
 }
 
 legend {
@@ -138,17 +146,17 @@ fieldset {
 .btn {
   float:left;
   display: inline-block;
-  padding: .938em 1.875em;
+  padding: .938em .9em;
   border: .094em solid #829c5d;
-  border-radius: .625em;
+  border-radius: .325em;
   background-color: #dbdef0;
-  box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+  box-shadow: 0 .12em .12em -0.12em #6ac531, inset 0 .033em #4da117, inset 0 -0.09em #b1ce7d;
   color: #3f60ba;
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0 .063em #154969;
+  text-shadow: 0 .033em #154969;
   cursor:pointer;
-  font: bold 1.8rem;
+  font: bold .9rem;
 }
 .btn:hover {
    background-color: #dbdef0;
@@ -215,12 +223,12 @@ fieldset {
 }
 
 .list-id-input .list-title-input .list-backstory-input .list-stopper-input .list-status-input .list-deleted_flag-input:hover {
-  background-color: #c8ea14;
+  background-color: white;
   box-shadow: 0 .125em #3a4d90, inset 0 .063em #c5e7b0, inset 0 -0.188em #154969;
 }
 
 .list-id-input .list-title-input .list-backstory-input .list-stopper-input .list-status-input .list-deleted_flag-input:active {
-   box-shadow: inset 0 0 1.094em #51b207, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
+   box-shadow: inset 0 0 1.094em white, inset 0 .063em white, inset 0 -0.188em white, 0 .063em white;
 }
 
 .list-button-div {
@@ -235,9 +243,13 @@ h2 {
   // color: #0c2d85;
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0 .063em #154969;
+  // text-shadow: 0 .063em white;
   cursor:pointer;
   font: bold 1.8rem;
+}
+
+.list-menu-link {
+  color: white;
 }
 
 #showAllLists,#addNewList, #showOneList, #updateOneList, #clearList, #removeOneList {

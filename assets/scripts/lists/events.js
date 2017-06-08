@@ -3,10 +3,11 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('../store.js')
 
 const onShowLists = function (event) {
   event.preventDefault()
-  // console.log('onShowLists button has been clicked')
+  console.log('onShowLists button has been clicked')
   api.showLists()
   .then(ui.showListsSuccess)
   .catch(ui.showListsFailure)
@@ -14,8 +15,9 @@ const onShowLists = function (event) {
 
 const onAddList = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  // console.log('data is ', data)
+  // const data = getFormFields(event.target)
+  const data = $('#list-create-input').val()
+  console.log('Data is: ', data)
   api.addList(data)
   .done(ui.addListSuccess)
   .fail(ui.addListFailure)
@@ -24,32 +26,33 @@ const onAddList = function (event) {
 const onUpdateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('onUpdateList has been called')
-  // console.log('event is ', event)
-  // console.log('data being sent to api is ', data)
-  api.updateList(data)
+  console.log('onUpdateList has been called')
+  console.log('event is ', event)
+  console.log('data being sent to api is ', data)
+  api.updateList(data, store.updateListID)
   .done(ui.updateListSuccess)
-  .fail(ui.updateListFailure)
+  .catch(ui.updateListFailure)
 }
 
 const onDeleteList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('event is ', event)
-  // console.log('data being sent to api is ', data)
+  console.log('event is ', event)
+  console.log('data being sent to api is ', data)
   api.deleteList(data)
   .done(ui.deleteListSuccess)
-  .fail(ui.deleteListFailure)
+  .catch(ui.deleteListFailure)
 }
 
 const addListHandlers = function (event) {
   $('#showAllLists').on('click', onShowLists)
+  $('#create-list-form').on('submit', onAddList)
   $('#addNewLists').on('submit', onAddList)
   $('#updateOneLists').on('submit', onUpdateList)
   $('#deleteOneList').on('submit', onDeleteList)
   $('#addNewLists').trigger('reset')
   $('#updateOneLists').trigger('reset')
-  $('#deleteOneLists').trigger('reset')
+  $('#deleteOneList').trigger('reset')
 }
 
 module.exports = {

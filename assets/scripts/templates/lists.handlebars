@@ -1,12 +1,12 @@
-{{#each lists as |list|}}
+<!-- {{#each lists as |list|}} -->
 
 <!-- goal: each list's information is displayed within an ul with a data-id attribute. -->
 
  <!-- Developers, why are we using data-id and not just id? -->
-  <ul><h2><data-id="{{list.id}}">{{list.list_name}}</h1>
+  <!-- <ul><h2><data-id="{{list.id}}">{{list.list_name}}</h1>
     <li>
-      <li>ID: {{list.id}}
-    </li>
+      <li>ID: {{list.id}} -->
+    <!-- </li> -->
       <!-- <li>Category: {{list.list_category}} -->
       <!-- <li>Stopper: {{list.list_}}
       <li>Status: {{list.status}}
@@ -14,5 +14,16 @@
       <!-- <li>Date Added: {{list.date_added}}
       <li>Last-Updated: {{list.updated_at}} -->
       <!-- <li>Hide (Deleted_flag) {{list.deleted_flag}} -->
-  </ul>
-{{/each}}
+  <!-- </ul>
+{{/each}} -->
+
+<div name="list-list" class='list-list' width='33%'>
+  {{#each lists as |list|}}
+  <div class='list-{{list.id}} list'>
+    <h1><a href='#list-menu' id="{{list.id}}" class="list-menu-link lead">{{list.list_name}}</a></h1>
+    <input type='button' value='Update' id='list-update-{{list.id}}' class='list-menu'>
+    <input type='button' value='Delete' id='list-delete-{{list.id}} deleteOneList' class='list-menu'>
+  </div>
+  <hr>
+  {{/each}}
+</div>

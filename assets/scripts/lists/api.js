@@ -15,6 +15,16 @@ const showLists = function () {
   })
 }
 
+const showOneList = function () {
+  console.log('called showOneList in the list/api.js')
+  return $.ajax({
+    url: config.apiOrigin + '/lists/' + store.list.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token}
+  })
+}
+
 const addList = function (data) {
   console.log('called addList in the list/api.js')
   console.log('data is', data)
@@ -41,7 +51,7 @@ const updateList = function (data) {
   })
 }
 
-const deleteList = function (data) {
+const deleteList = function (id) {
   console.log('called deleteList in the list/api.js')
   console.log('data is', data)
   console.log('data.id is ', data.list.id)

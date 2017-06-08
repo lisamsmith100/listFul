@@ -3,7 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
-const listApi = require('../lists/api.js')
+const listsApi = require('../lists/api.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   // console.log('signin data is ', data)
   api.signIn(data)
-  .then(listApi.onShowLists)
+  .then(listsApi.onShowLists)
   .done(ui.signInSuccess)
   .fail(ui.signInFailure)
 }

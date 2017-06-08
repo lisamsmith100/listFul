@@ -23,7 +23,7 @@
 <body class="container-fluid">
   <a id="top"></a>
   <div id="fb-root"></div>
-  <h1>listFul</h1>
+  <h1 class="app-name">listFul</h1>
   <p id="tagline">An app for the chronic lister.</p>
 
   <div class="background">
@@ -31,7 +31,7 @@
 
     <div class="user-info">
       <div class="user-status">
-       <p>Welcome.  User Status:  Not currenly logged in.</p>
+       <p>Welcome.<br/>User Status:  Not currenly logged in.</p>
       </div>
       <!-- Sign Up -->
       <form class="sign-up first-display">
@@ -82,7 +82,7 @@
     <div id="column1">
 
       <h2>Menu</h2>
-      <button id="showAllLists" class="btn btn-default">Show All Your Lists</button><br>
+      <button id="showAllLists" class="btn btn-default logged-in-display hiding">Show All Your Lists</button><br>
       <form id="addNewList" class="logged-in-display hiding">
         <fieldset>
           <!-- <legend>Create a List</legend> -->
@@ -97,7 +97,6 @@
 
       <form id="updateOneList" class="logged-in-display hiding">
         <fieldset>
-          <legend>Update A List</legend>
           <div id="updateListFailure"> </div>
           <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
           <input class="list-list_name-input" type="text" name="list[list_name]" value="" placeholder="title">
@@ -112,7 +111,6 @@
 
       <form id="deleteOneList" class="logged-in-display hiding">
         <fieldset>
-          <legend>Delete A List</legend>
             <div id="deleteListFailure"> </div>
           <input class="list-id-input" type="text" name="list[id]" value="" placeholder="id no.-required">
           <input class="list-id-btn" type="submit" name="submit" value="Delete List Forever">
@@ -132,7 +130,7 @@
         <h2>Items</h2>
         <div id="content-items" class="content-items">
         </div>
-       </div>
+      </div>
    </div>
   </div> -->
 
