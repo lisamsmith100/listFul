@@ -38,18 +38,19 @@ const onUpdateList = function (event) {
 
 const onDeleteList = function (event) {
   event.preventDefault()
-  // const data = getFormFields(event.target)
-  // const data = event.target.id.split('-')
+  const data = getFormFields(event.target)
+  // const data = event.target.list[id]
+  // .split('-')
 //   console.log('event is ', event)
 //   console.log('data being sent to api is ', data)
-//   listsApi.deleteList(data[2])
-//   .then(listsUi.deleteListSuccess)
-//   .catch(listsUi.deleteListFailure)
+  listsApi.deleteList(data)
+  .then(listsUi.deleteListSuccess)
+  .catch(listsUi.deleteListFailure)
 // }
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
   listsApi.deleteList(data)
-  .done(listsUi.deleteListSuccess)
+  .then(listsUi.deleteListSuccess)
   .fail(listsUi.deleteListFailure)
 }
 

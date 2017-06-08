@@ -33,7 +33,7 @@ li {
   margin-left: 50px;
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0 .063em #154969;
+  // text-shadow: 0 .063em #154969;
   cursor:pointer;
   font: bold 1.8rem;
   // color: #d1d4f0;
@@ -253,7 +253,8 @@ h2 {
 }
 
 .list-menu-link {
-  color: white;
+  color: black;
+  font-weight:bolder;
 }
 
 #showAllLists,#addNewList, #showOneList, #updateOneList, #clearList, #removeOneList {
@@ -265,7 +266,7 @@ h2 {
 }
 
 #tagline {
-  color: #8d9ce7;
+  color: #e0adee;
 }
 
 #addListFailure {
@@ -289,4 +290,31 @@ h2 {
 }
 .list-list {
   border: none;
+}
+
+#showAllLists {
+  float: left;
+}
+
+#showListTemplates {
+  float: right;
+}
+
+.wrapper {
+ width:auto;
+ overflow:hidden;
+}
+
+.column1 {
+ width:auto;
+ float:left;
+}
+
+.column2 {
+ width:auto;
+ float:right;
+}
+
+a:hover {
+  background-color:#f2c24e;
 }

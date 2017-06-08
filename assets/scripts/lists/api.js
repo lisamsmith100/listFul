@@ -55,7 +55,7 @@ const deleteList = function (data) {
   console.log('called deleteList in the list/api.js')
   console.log('data is', data)
   console.log('data.id is ', data.list.id)
-  console.log('store.id is ', store.list.id)
+  // console.log('store.id is ', store.list.id)
   return $.ajax({
     url: config.apiOrigin + '/lists/' + data.list.id,
     method: 'DELETE',
