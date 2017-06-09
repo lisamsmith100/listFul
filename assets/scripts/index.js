@@ -9,6 +9,7 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   listsEvents.addListHandlers()
+  // listItemsEvents.addListItemHandlers()
   $('.show-when-logged-in').hide()
   $('intro-header').show()
   $('intro-message').show()
@@ -25,7 +26,8 @@ $(() => {
 
 const authEvents = require('./auth/events.js')
 const listsEvents = require('./lists/events.js')
-const listsTemplateEvents = require('./list-templates/events.js')
+// const listItemsEvents = require('./lists/item-events.js')
+// const listsTemplateEvents = require('./list-templates/events.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

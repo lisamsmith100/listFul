@@ -30,20 +30,18 @@ const addListItem = function (id, data) {
   })
 }
 
-//
-// const updateList = function (data) {
-//   console.log('called updateList in the list/api.js')
-//   console.log('data is ', data)
-//   return $.ajax({
-//     url: config.apiOrigin + '/lists/' + data.list.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-//
+const updateListItem = function (data, listID, itemID) {
+  console.log('called updateListItem in the list/item-api.js')
+  return $.ajax({
+    url: config.apiOrigin + '/lists/' + listID + '/list_items/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const deleteListItem = function (itemID, listID) {
   console.log('called deleteListItem in the list/item-api.js')
   console.log('itemID in item-api is ', itemID)
@@ -64,6 +62,6 @@ const deleteListItem = function (itemID, listID) {
 module.exports = {
   showListItems,
   addListItem,
-  // updateListItem,
+  updateListItem,
   deleteListItem
 }

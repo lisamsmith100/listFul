@@ -38,19 +38,26 @@ const onAddListItem = function (event) {
   .done(listItemsUi.showListItems)
   .fail(listItemsUi.addListItemFailure)
 }
-//
-// const onUpdateList = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log('onUpdateList has been called')
-//   console.log('event is ', event)
-//   console.log('data being sent to api is ', data)
-//   listsApi.updateList(data)
-//   // removed this arg fm updateList invocation, store.updateListID
-//   .then(listsUi.updateListSuccess)
-//   .catch(listsUi.updateListFailure)
-// }
-//
+
+const onUpdateListItem = function (event) {
+  event.preventDefault()
+  console.log('event is ', event)
+  const itemID = $('.list-item-id-input').val()
+  const data = getFormFields(this)
+  console.log('onUpdateListItem has been called')
+  console.log('data is ', data)
+  // const itemID = $(this).attr('data-id')
+  // console.log('this is ', this)
+  const listID = store.current_list_id
+  console.log('item-events listID is ', listID)
+  console.log('item-events id is ', itemID)
+  console.log('data being sent to api is ', data)
+  listItemsApi.updateListItem(data, listID, itemID)
+  // removed this arg fm updateList invocation, store.updateListID
+  .then(listItemsUi.updateListItemSuccess)
+  .catch(listItemsUi.updateListItemFailure)
+}
+
 const onDeleteListItem = function (event) {
   event.preventDefault()
   // const data = getFormFields(event.target)
@@ -77,6 +84,7 @@ const addListItemHandlers = function (event) {
   console.log('addListItemHandlers has been called')
   $(document).on('click', '.list-menu-link', onShowListItems)
   $(document).on('click', '.deleteOneListItem', onDeleteListItem)
+  $(document).on('click', '#updateOneListItem', onUpdateListItem)
   // $('.list-menu-link').on('submit', onShowListItems)
   // $('.list-menu-link').on('click', onShowListItems)
   // $('#create-list-form').on('submit', onAddList)
@@ -92,7 +100,6 @@ module.exports = {
   addListItemHandlers,
   onShowListItems,
   onAddListItem,
-  onDeleteListItem
-  // ,
-  // onUpdateListItem,
+  onDeleteListItem,
+  onUpdateListItem
 }
