@@ -5,7 +5,7 @@ const config = require('../config')
 const store = require('../store')
 
 const showLists = function () {
-  console.log('called showLists in the list/api.js')
+  // console.log('called showLists in the list/api.js')
   return $.ajax({
     url: config.apiOrigin + '/lists',
     method: 'GET',
@@ -16,7 +16,7 @@ const showLists = function () {
 }
 
 const showOneList = function () {
-  console.log('called showOneList in the list/api.js')
+  // console.log('called showOneList in the list/api.js')
   return $.ajax({
     url: config.apiOrigin + '/lists/' + store.list.id,
     method: 'GET',
@@ -26,8 +26,8 @@ const showOneList = function () {
 }
 
 const addList = function (data) {
-  console.log('called addList in the list/api.js')
-  console.log('data is', data)
+  // console.log('called addList in the list/api.js')
+  // console.log('data is', data)
   return $.ajax({
     url: config.apiOrigin + '/lists/',
     method: 'POST',
@@ -39,8 +39,8 @@ const addList = function (data) {
 }
 
 const updateList = function (data) {
-  console.log('called updateList in the list/api.js')
-  console.log('data is ', data)
+  // console.log('called updateList in the list/api.js')
+  // console.log('data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/lists/' + data.list.id,
     method: 'PATCH',
@@ -52,9 +52,9 @@ const updateList = function (data) {
 }
 
 const deleteList = function (data) {
-  console.log('called deleteList in the list/api.js')
-  console.log('data is', data)
-  console.log('data.id is ', data.list.id)
+  // console.log('called deleteList in the list/api.js')
+  // console.log('data is', data)
+  // console.log('data.id is ', data.list.id)
   // console.log('store.id is ', store.list.id)
   return $.ajax({
     url: config.apiOrigin + '/lists/' + data.list.id,

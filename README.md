@@ -16,7 +16,7 @@
 
 ## Project Planning
 
-[project plan](link goes here)
+[project plan](<https://github.com/lisamsmith100/listFul-rails-api>)
 
 ### User Stories
 
@@ -26,19 +26,20 @@ As as user,…
 	I want to sign out
 	I want to change my password
 
-	I want to create a list
-	I want to save a list
-	I want to edit a list title
-	I want to delete a list
-	I want to view all of my list titles
-	I want to view all of the items in a list
-	I want to add items to a list
-	I want to edit items in a list
-	I want to delete an item from a list
+	I want to create a list - COMPLETED
+	I want to save a list - COMPLETED
+	I want to edit a list title - COMPLETED
+	I want to delete a list - COMPLETED
+	I want to view all of my list titles - COMPLETED
+  I want to add items to a list - COMPLETED
+  I want to edit items in a list - NOT COMPLETED
+  I want to delete an item from a list - COMPLETED
+  I want to view all of the items in a list - COMPLETED
 
 ### Stretch User Stories
 
-As a user,…	I want to be reminded of a due date for a list item
+As a user,…
+  I want to be reminded of a due date for a list item
   I want to sort my lists
 	I want to be reminded of a due date for a list
 	I want to add link to Google directions to a list item
@@ -70,17 +71,20 @@ As a user,…	I want to be reminded of a due date for a list item
   in switching gears if not comfortable enough, I decided to pursue the Browser
   Template avenue.
 
-  I had high hopes of making something lovely but, downgraded the plans for this
-  projet due to the lack of time and the issue queue items holding the project up.
+  I had high ambitions of making something grand but, downgraded the plans for this
+  project due to the lack of time and number of issues, some withstanding and some new.
 
-  In the end, I ended with a far smaller subset of what I had set out to accomplish
-  but the ability to create, read, and update stand, with a structure differet than
-  what I have done in the recent deade.
+  I ended with a fairly smaller subset of what I had set out to accomplish
+  but am able to create, read, and update lists, with a different api, client than
+  project two.
 
   I began with a high level plan and continued to whittle down to daily tasks.
-  Throughout the process, I felt immense pressure to try something new.  I
-  tried Ember and I feel good that I learned quite a bit about full stack
-  application development.
+  Throughout the process, I felt pressure to try something new.  I was interested in
+  giving Ember a chance but feel I need more time to make it work property.
+
+  Overall, I feel good that I learned quite a bit about full stack
+  application development throughout the course and given a few more days, would
+  have a product that would meet several stretch goals.
 
 
   ## Dependencies
@@ -93,7 +97,10 @@ As a user,…	I want to be reminded of a due date for a list item
 
 ## Next Steps
 
-  [need to add]
+  - Incorporate list_items back into the project
+  - Re scaffold template and template items components/routes
+  - Add in API to send email with reminders
+  - Add in columns and modals
 
 ## [License](LICENSE)
 

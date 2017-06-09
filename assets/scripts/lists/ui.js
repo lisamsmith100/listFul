@@ -10,7 +10,7 @@ const listsApi = require('./api.js')
 // const itemEvents = require('./item-events.js')
 
 const showListsSuccess = (data) => {
-  console.log('data is ', data)
+  // console.log('data is ', data)
 
   data.lists.sort(function (a, b) {
     return a.id - b.id
@@ -19,23 +19,23 @@ const showListsSuccess = (data) => {
   // itemEvents.addListItemHandlers()
   $('.content-menu').html(' ')
   $('.content-menu').html(showListsHtml)
-  console.log('showLists is a success')
+  // console.log('showLists is a success')
 }
 
 const showListsFailure = (error) => {
-  console.log('showLists failed')
+  // console.log('showLists failed')
   console.error(error)
 }
 
 const addListSuccess = (data) => {
-  console.log('you have reached api function')
+  // console.log('you have reached api function')
   store.list = data.list
-  console.log('data.list is ', data.list)
+  // console.log('data.list is ', data.list)
   const addListHtml = addListTemplate({ lists: data.lists })
-  console.log('addListHtml = ', addListHtml)
+  // console.log('addListHtml = ', addListHtml)
   $('.content-menu').append(addListHtml)
   $('#addNewLists').find('input:text, select, textarea').val('')
-  console.log('addList is a success')
+  // console.log('addList is a success')
   listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#addListFailure').html(' '))
@@ -44,23 +44,23 @@ const addListSuccess = (data) => {
 }
 
 const addListFailure = (error) => {
-  console.log('addList failed')
+  // console.log('addList failed')
   console.error(error)
   $('#addListFailure').html('We were unable to add your list.  Did you add a title?  Please try again.')
 }
 
 const updateListSuccess = (data) => {
-  console.log('data.list is ', data)
+  // console.log('data.list is ', data)
   const showListsHtml = showListsTemplate({ lists: data.list })
   const updateInfo = data
-  console.log('data.list is ', data)
+  // console.log('data.list is ', data)
   const updateListHtml = updateListTemplate({ lists: data.list })
-  console.log('data.list is ', data)
-  console.log('updateListHtml = ', updateListHtml)
+  // console.log('data.list is ', data)
+  // console.log('updateListHtml = ', updateListHtml)
   $('.content-menu').append(showListsHtml)
   $('#updateOneList').find('input:text, select, textarea').val('')
   listsEvents.onShowLists
-  console.log('updateList is a success')
+  // console.log('updateList is a success')
   listsApi.showLists(data)
     .then(showListsSuccess)
     .then($('#updateListFailure').html(' '))
@@ -68,15 +68,15 @@ const updateListSuccess = (data) => {
 }
 
 const updateListFailure = (error) => {
-  console.log('updateList failed')
+  // console.log('updateList failed')
   console.error(error)
   $('#updateListFailure').html('We were unable to update your list.  Did you add an ID?  Please try again.')
 }
 
 const deleteListSuccess = (data) => {
-  console.log('deleteList is a success')
+  // console.log('deleteList is a success')
   $('#deleteOneLists').find('input:text, select, textarea').val('')
-  console.log('data is ', data)
+  // console.log('data is ', data)
   $('#delete').html(' ')
   listsApi.showLists(data)
     .then(showListsSuccess)
@@ -85,7 +85,7 @@ const deleteListSuccess = (data) => {
 }
 
 const deleteListFailure = (error) => {
-  console.log('deleteList failed')
+  // console.log('deleteList failed')
   console.error(error)
   $('#deleteListFailure').html('We were unable to delete your list.  Did you add an ID?  Please try again.')
 }
