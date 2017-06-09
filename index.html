@@ -95,6 +95,17 @@
         </div>
         <br/> -->
 
+        <form id="addNewList" class="logged-in-display hiding">
+         <fieldset>
+           <!-- <legend>Create a List</legend> -->
+           <div id="addListFailure"> </div>
+           <input class="list_name-input" type="text" name="list[list_name]" value="" placeholder="new list_name-required">
+           <input class="list_category-input" type="text" name="list[list_category]" value="" placeholder="list_category">
+           <!-- <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
+           <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
+           <input class="list-id-btn" type="submit" name="submit" value="Add List">
+         </fieldset>
+        </form><br/>
         <form id="updateOneList" class="logged-in-display hiding">
           <fieldset>
             <!-- <legend>Update A List</legend> -->
@@ -121,17 +132,6 @@
       <!-- Column to display lists/templates -->
       <div id="column2" class="column2 column logged-in-display hiding">
          <h2 class="logged-in-display hiding">YOUR LISTS</h2>
-         <form id="addNewList" class="logged-in-display hiding">
-          <fieldset>
-            <!-- <legend>Create a List</legend> -->
-            <div id="addListFailure"> </div>
-            <input class="list_name-input" type="text" name="list[list_name]" value="" placeholder="new list_name-required">
-            <input class="list_category-input" type="text" name="list[list_category]" value="" placeholder="list_category">
-            <!-- <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
-            <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
-            <input class="list-id-btn" type="submit" name="submit" value="Add List">
-          </fieldset>
-        </form><br/>
          <div id="content-lists-or-templates" class="content-lists-or-templates">
             <div id="content-menu" class="content-menu logged-in-display hiding">
             </div>
@@ -139,33 +139,33 @@
     </div>
 
        <div id="column3" class="column3 column logged-in-display hiding">
-        <h2 class="logged-in-display hiding">Items</h2>
-        <form id="addNewListItem" class="logged-in-display hiding">
-          <fieldset>
+        <!-- <h2 class="logged-in-display hiding">ITEMS</h2> -->
+        <!-- <form id="addNewListItem" class="logged-in-display hiding">
+          <fieldset> -->
             <!-- <legend>Create a List</legend> -->
-            <div id="addListItemFailure"> </div>
+            <!-- <div id="addListItemFailure"> </div>
             <input class="list_item_name-input" type="text" name="list_item[list_item_name]" value="" placeholder="new list_item_name-required">
-            <input class="list_item_category-input" type="text" name="list_item[list_item_category]" value="" placeholder="list_item_category">
+            <input class="list_item_category-input" type="text" name="list_item[list_item_category]" value="" placeholder="list_item_category"> -->
             <!-- <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
             <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
-            <input class="list-item-id-btn" type="submit" name="submit" value="Add List Item">
+            <!-- <input class="list-item-id-btn" type="submit" name="submit" value="Add List Item">
           </fieldset>
-        </form><br/>
-        <form id="updateOneListItem" class="logged-in-display hiding">
-          <fieldset>
+        </form><br/> -->
+        <!-- <form id="updateOneListItem" class="logged-in-display hiding">
+          <fieldset> -->
             <!-- <legend>Update A List</legend> -->
-            <div id="updateListItemFailure"> </div>
+            <!-- <div id="updateListItemFailure"> </div>
             <input class="list-item-id-input" type="text" name="list_item[id]" value="" placeholder="item id no.-required">
-            <input class="list-item-list_item_name-input" type="text" name="list_item[list_item_name]" value="" placeholder="item name">
+            <input class="list-item-list_item_name-input" type="text" name="list_item[list_item_name]" value="" placeholder="item name"> -->
             <!-- <input class="list-item-list_item_name-input" type="text" name="list_id[listID]" value="" placeholder="item name"> -->
             <!-- <input class="list-list_category-input" type="text" name="list[list_category]" value="" placeholder="backstory">
             <input class="list-stopper-input" type="text" name="list[stopper]" value="" placeholder="stopper">
             <input class="list-status-input" type="text" name="list[status]" value="" placeholder="status"> -->
-            <input class="list-item-id-btn" type="submit" value="Update Item">
+            <!-- <input class="list-item-id-btn" type="submit" value="Update Item">
           </fieldset>
           <div class="special-note">(Item Id No. Must be One of Those Listed Below)<br/>
           (Warning: if there is text in the item already and you leave an update field blank, the updated item field will be blank.)</div>
-        </form><br/>
+        </form><br/> -->
         <div id="content-items" class="content-items">
         </div>
        </div>
